@@ -1,0 +1,22 @@
+<!-- ko foreach: tasks.items-->
+<div class="task clearfix">
+  <div class="task-progress pull-left">
+    <span data-bind="text: progress()+'%'"></span>
+  </div>
+  <div class="task-main pull-left">
+    <div class="task-info"><span class="hilight" data-bind="text: deadline() ? '〆切:' + deadline(): '〆切:未定'"></span>
+      <span class="hilight" data-bind="text: deadline() ? remaining_days() : ''"></span>
+    </div>
+    <div class="task-title"><span data-bind="text: title()"></span></div>
+    
+    <div class="progress clearfix">
+      <div class="progress-bar" data-bind="style:{width: progress() + '%'}"></div>
+      <div class="progress-slide-button" data-bind="draggable_button: progress"></div>
+    </div>
+  </div>
+  <div class="task-side pull-right">
+    <button class="default">完了</button>
+    <!-- <button>完了を取り消す</button> -->
+  </div>
+</div>
+<!-- /ko -->

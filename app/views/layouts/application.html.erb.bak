@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>ToDoApp</title>
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <div class="l-wrapper">
+    <div class="l-header">
+      <div class="l-constrained">
+	<div class="header-logo pull-left">
+	  <img src="./logo.png">
+	</div>
+	<div class="header-desc pull-left">
+	  進捗が見えるタスク管理アプリ
+	</div>
+	<% if user_signed_in? %>
+        <div class="dropdown-user pull-right">
+          <img src="http://pbs.twimg.com/profile_images/541976875929571328/vnbAiTRn_400x400.png">
+          <div class="dropdown-panel">
+            <ul>
+              <li><a href="#">プロフィール</a></li>
+              <li><%= link_to 'アカウント設定', edit_user_registration_path %></li>
+              <li><%= link_to 'ログアウト', destroy_user_session_path %></li>
+            </ul>
+          </div>
+        </div>
+	<% else %>
+	<%= link_to "新規会員登録", new_user_registration_path, :class => 'link_btn pull-right'%>
+	<%= link_to "ログイン", new_user_session_path, :class => 'link_btn pull-right' %>
+	<% end %>
+      </div>
+    </div>
+    <div class="l-main clearfix">
+      <div class="l-constrained clearfix">
+	  <% if notice %>
+	    <p class="alert alert-success"><%= notice %></p>
+	  <% end %>
+	  <% if alert %>
+	    <p class="alert alert-danger"><%= alert %></p>
+	  <% end %>
+	  <%= yield %>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

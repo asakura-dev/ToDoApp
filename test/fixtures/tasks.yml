@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  deadline: 
+  title: 
+  description: 
+  uesr_id: 
+  progress: 
+  status: 1
+
+two:
+  deadline: 
+  title: 
+  description: 
+  uesr_id: 
+  progress: 
+  status: 1

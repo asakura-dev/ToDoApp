@@ -1,0 +1,19 @@
+<div class="l-constrained clearfix">
+  <div class="side-col l-grid-3-12 pull-left">
+    <% if user_signed_in? %>
+      <%= render 'shared/task_form' %>
+      <%= render 'shared/task_stats'%>
+    <% end %>
+  </div>
+  <div class="main-col l-grid-9-12 pull-right">
+    <div class="tab-buttons">
+      <ul class="clearfix">
+        <li class="actived">すべて<span class="task_count" data-bind="text: tasks.count()"></span></li>
+        <li>締め切りが近いタスク</li>
+      </ul>
+    </div>
+    <div class="tab-contets">
+	<%= render 'shared/task'%>
+    </div>
+  </div>
+</div>

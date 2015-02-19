@@ -1,0 +1,22 @@
+<div class="l-grid-row todo-post-form clearfix" data-bind="with: taskForm">
+      <%= form_for(@task, remote: true) do |f| %>
+	<h1>新しいタスク</h1>
+	<%= f.label :deadline, "〆切", class: "deadline"%>
+	<span data-bind="text: deadline_text"></span>
+	<div class="l-grid-row date_buttons">
+	  <span class="select" data-bind="css: { actived: undecided_btn() == true }, click: clickUndecided">未定</span> or
+	  <span class="select" data-bind="css: { actived: today_btn() == true }, click: clickToday">今日中</span> or
+	  <input type="number" data-bind="css: { actived: day_after_field() == true }, value: day_after_val, click: clickDayAfter" class="input-date-later">日後
+	  
+	</div>
+	<%= f.hidden_field :deadline , data: {bind: "value: deadline"}%>
+	<%= f.label :title, "タスク名 (必須)" %>
+	<%= f.text_field :title, class: "input-title" %>
+	<%= f.label :description, "詳細 (オプション)" %>
+	<%= f.text_area :description, class: "input-content" %>
+	<div class="task_sending pull-right">
+	  <%= image_tag("ajax-loader.gif", alt:"送信中", data: {bind: "visible: !enable()"}) %>
+	</div>
+	<%= f.submit "作成", class: "create_btn pull-right" %>
+      <% end %>
+</div>
