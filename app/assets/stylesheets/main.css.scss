@@ -271,14 +271,13 @@ dd{
     font-weight:bold;
   }
   .date_buttons{
-    height:25px;
     padding:10px 0 0 0;
     user-select:none;
   }
   input{
     display:block;
     &.input-date-later{
-      width: 50px;
+      width: 45px;
       line-height:22px;
       text-align: center;
       display:inline;
