@@ -1,0 +1,6 @@
+{
+  "name": "ToDoApp",
+  "scripts" : {
+      "postdeploy": "bundle exec rake db:setup"
+  }
+}
