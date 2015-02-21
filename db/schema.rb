@@ -13,7 +13,7 @@
 
 ActiveRecord::Schema.define(version: 20150216134916) do
 
-  create_table "tasks", force: true do |t|
+  create_table "tasks", force: :cascade do |t|
     t.date     "deadline"
     t.string   "title"
     t.text     "description"
@@ -24,7 +24,7 @@ ActiveRecord::Schema.define(version: 20150216134916) do
     t.datetime "updated_at"
   end
 
-  create_table "users", force: true do |t|
+  create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
     t.string   "reset_password_token"
